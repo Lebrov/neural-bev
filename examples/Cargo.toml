@@ -1,0 +1,17 @@
+[package]
+name        = "neuralbev-examples"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[example]]
+name = "platformer"
+path = "examples/platformer.rs"
+
+[[example]]
+name = "scene_load"
+path = "examples/scene_load.rs"
+
+[dependencies]
+neuralbev-core = { path = "crates/neuralbev-core" }
+bevy           = { workspace = true }

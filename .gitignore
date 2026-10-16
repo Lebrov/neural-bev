@@ -1,0 +1,27 @@
+# Rust build artifacts
+/target
+**/target/
+
+# Cargo lock для библиотек (сохраняем для бинарников)
+# Cargo.lock  # НЕ игнорируем — workspace содержит бинарники
+
+# Editor/IDE
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# NeuralBev specific
+*.neuralbev.yaml.bak
+assets/cache/
+
+# Env secrets (никогда не коммитим токены!)
+.env
+*.env.local
+secrets/

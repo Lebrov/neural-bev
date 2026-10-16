@@ -1,0 +1,48 @@
+# AI-HINT: Это файл сцены NeuralBev. Каждая сущность — объект под ключом entities.
+# Компоненты — словарь под ключом components.
+# Дочерние сущности — массив под ключом children.
+# Числа ВСЕГДА должны быть float (100.0, не 100).
+
+meta:
+  engine_version: "0.1.0"
+  scene_name: "MainLevel"
+
+entities:
+  - id: "player"
+    name: "Player"
+    tags:
+      - player
+      - controllable
+    components:
+      Transform:
+        translation: [0.0, 0.0, 0.0]
+        rotation: [0.0, 0.0, 0.0, 1.0]
+        scale: [1.0, 1.0, 1.0]
+      Health:
+        current: 100.0
+        max_health: 100.0
+        invincibility_timer: 0.0
+      Script:
+        path: "scripts/player_controller.lua"
+    children: []
+
+  - id: "enemy_1"
+    name: "Goblin"
+    tags:
+      - enemy
+    components:
+      Transform:
+        translation: [200.0, 0.0, 0.0]
+        rotation: [0.0, 0.0, 0.0, 1.0]
+        scale: [1.0, 1.0, 1.0]
+      Health:
+        current: 30.0
+        max_health: 30.0
+        invincibility_timer: 0.0
+      AiBehavior:
+        type: Patrol
+        patrol_points:
+          - [100.0, 0.0]
+          - [300.0, 0.0]
+        speed: 80.0
+    children: []

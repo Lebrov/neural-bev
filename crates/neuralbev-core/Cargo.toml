@@ -1,0 +1,23 @@
+[package]
+name        = "neuralbev-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "AI-Friendly ECS core for NeuralBev — Bevy wrapper with blueprints, events and scene I/O."
+
+[lib]
+name = "neuralbev_core"
+
+[dependencies]
+bevy          = { workspace = true }
+serde         = { workspace = true }
+serde_yaml    = { workspace = true }
+serde_json    = { workspace = true }
+thiserror     = { workspace = true }
+log           = { workspace = true }
+uuid          = { workspace = true }
+neuralbev-macros = { path = "../neuralbev-macros" }
+
+[dev-dependencies]
+# bevy test utilities — полный bevy для тестов (включает headless рендер)
+bevy = { workspace = true, features = ["bevy_scene"] }

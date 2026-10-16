@@ -1,0 +1,17 @@
+[package]
+name        = "neuralbev-editor"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "NeuralBev Editor — Phase 2 stub."
+
+[[bin]]
+name = "editor"
+
+[dependencies]
+neuralbev-core = { path = "../crates/neuralbev-core" }
+bevy           = { workspace = true }
+log            = { workspace = true }
+
+# Editor UI — будет активирован в Фазе 2
+# bevy_egui = { workspace = true }
